@@ -1,27 +1,41 @@
-.main{
+/* Styles for the main container */
+.main {
+    /* Create a flex container with a column layout */
     display: flex;
     flex-direction: column;
 }
 
-.main form{
+/* Styles for forms within the main container */
+.main form {
+    /* Create a flex container with a column layout */
     display: flex;
     flex-direction: column;
     padding: 2%;
     align-items: center;
 }
-.main form>input{
-    width: 40%;
-}
-.main form textarea{
+
+/* Styles for input elements within forms */
+.main form > input {
+    /* Set the width of input elements */
     width: 40%;
 }
 
-.select{
+/* Styles for textarea elements within forms */
+.main form textarea {
+    /* Set the width of textarea elements */
+    width: 40%;
+}
+
+/* Styles for select elements */
+.select {
+    /* Set the width and padding for select elements */
     width: 30%;
     padding: 1%;
 }
 
-.lst{
+/* Styles for a list container */
+.lst {
+    /* Create a flex container with a column layout */
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -29,22 +43,31 @@
     justify-content: center;
     align-items: center;
 }
-.lst>input{
+
+/* Styles for input elements within the list container */
+.lst > input {
+    /* Set padding and margin for input elements */
     padding: 1%;
     margin: 1%;
 }
 
-#isbtn{
-    width: 20%; 
+/* Styles for an element with the ID 'isbtn' */
+#isbtn {
+    /* Set the width of the element */
+    width: 20%;
 }
 
+/* Styles for an element with the ID 'flip' */
 #flip {
+    /* Center text and set background and border */
     text-align: center;
     background-color: #000000;
     border: solid 1px #c3c3c3;
-  }
-  
-  #panel {
+}
+
+/* Styles for an element with the ID 'panel' */
+#panel {
+    /* Set padding and initially hide the element */
     padding: 50px;
     display: none;
-  }
+}
