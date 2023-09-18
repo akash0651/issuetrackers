@@ -15,7 +15,7 @@ The Issue Tracker App is a web-based application designed to help teams and orga
 ## Technologies Used
 - HTML5
 - CSS3
-- JavaScript (Vanilla)
+- JavaScript
 - Backend technology (Node.js, Express.js, Mongodb) for data storage and authentication.
 
 ## Getting Started
