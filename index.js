@@ -3,75 +3,59 @@ const cookieParser = require('cookie-parser');
 var expressLayouts = require('express-ejs-layouts');
 const port = 8003;
 
-
+// Import database configuration
 const db = require('./config/mongoose');
 const session = require('express-session');
-// const MongoStore = require('connect-mongo');
+
+// Import Passport for authentication
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-// const MongoDBStore = require('connect-mongodb-session')(session);
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+
+// Import the MongoStore for session storage
 const MongoStore = require('connect-mongo');
 
-
-
-
-const passportGoogle = require('./config/passport-google-oauth2-strategy')
-
+// Create an Express application
 const app = express();
 app.use(express.static('assets'));
 
-
-
+// Middleware for parsing request data
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-
+// Middleware for handling EJS layouts
 app.use(expressLayouts);
-// extract style and script from subpages to layout
 
-
-// setup view engin
+// Configure the view engine and views directory
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-
+// Configure session management
 app.use(session({
     name: 'quoro',
     secret: 'hellochetan',
     saveUninitialized: false,
     resave: false,
-
     cookie: {
         maxAge: (1000 * 60 * 100)
-
     },
-
-
     store: MongoStore.create({
-
         mongoUrl: 'mongodb+srv://kumarakashsahu98765:KrhlXh2AGON99ZPI@cluster0.dzyqlwv.mongodb.net/issuetrackerdb',
         autoRemove: 'disabled'
-
-    },
-        function (err) {
-            console.log(err);
-        })
-
-
+    })
 }))
 
-
+// Initialize Passport for authentication
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(expressLayouts);
 
-app.use(passport.setAuthenticatedUser)
+// Middleware to set the authenticated user in the request
+app.use(passport.setAuthenticatedUser);
 
-// extract style and script from subpages to layout
-// app.set('layout extractStyles', true);
-// app.set('layout extractScripts', true);
+// Routes
 app.use('/', require('./routes'));
 
+// Start the server
 app.listen(port, function (err) {
     if (err) {
         console.log(`Error in running the server: ${err}`);
