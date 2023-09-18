@@ -1,48 +1,78 @@
-/* project form */
-#project-feed{
+/* Styles for the project form */
+
+/* Styling for the project feed container */
+#project-feed {
+    /* Set the background color */
     /* background-color: rgb(13, 14, 13); */
+    
+    /* Set the border */
     /* border: 5px solid red; */
+
+    /* Make it a flex container with a column layout */
     display: flex;
     flex-direction: column;
+
+    /* Reset padding and margin */
     padding: 0%;
     margin: 0%;
+
+    /* Set width to 100% */
     width: 100%;
-  }
- 
-#project-feed form{
+}
+
+/* Styling for the form within the project feed */
+#project-feed form {
+    /* Make it a flex container with a column layout */
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
+    /* Set border */
     /* border: 2px solid black; */
+
+    /* Set width to 100% and height to min-content */
     width: 100%;
     height: min-content;
+
+    /* Reset padding and margin */
     padding: 0%;
     margin: 0%;
-    
 }
 
-#project-feed form input{
+/* Styling for input fields within the form */
+#project-feed form input {
+    /* Set the width */
     width: 70%;
-    
+
+    /* Set the height and border */
     height: 4vh;
     border: 2px solid black;
 }
 
-textarea{
+/* Styling for the textarea within the form */
+textarea {
+    /* Set the width and height */
     width: 70%;
     height: 15vh;
+
+    /* Set margin and border */
     margin: 0.5%;
     border: 2px solid black;
 }
-#project-feed form input::-webkit-input-placeholder{
+
+/* Styling for the input placeholders in WebKit browsers */
+#project-feed form input::-webkit-input-placeholder {
+    /* Set padding for placeholders */
     /* margin: 5px; */
     padding: 5%;
-  
 }
 
-#project-feed form #addBtn{
+/* Styling for the "Add" button within the form */
+#project-feed form #addBtn {
+    /* Set background color */
     background-color: #343534;
+
+    /* Set width and height */
     width: 20vh;
     height: 5vh;
 }
