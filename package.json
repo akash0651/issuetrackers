@@ -6,7 +6,7 @@
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Rohit Lohra",
+  "author": "Akash Kumar",
   "license": "ISC",
   "dependencies": {
     "abbrev": "^1.1.1",
